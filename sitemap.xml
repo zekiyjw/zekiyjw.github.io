@@ -2,7 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>https://zekiyjw.github.io/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/</loc>
+    
+    <lastmod>2022-06-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zekiyjw.github.io/categories/index.html</loc>
+    
+    <lastmod>2022-06-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zekiyjw.github.io/repository/index.html</loc>
     
     <lastmod>2022-06-28</lastmod>
     
@@ -11,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/repository/index.html</loc>
+    <loc>https://zekiyjw.github.io/tags/index.html</loc>
     
     <lastmod>2022-06-28</lastmod>
     
@@ -20,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/index.html</loc>
+    <loc>https://zekiyjw.github.io/books/index.html</loc>
     
     <lastmod>2022-06-28</lastmod>
     
@@ -29,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/books/index.html</loc>
+    <loc>https://zekiyjw.github.io/links/index.html</loc>
     
     <lastmod>2022-06-28</lastmod>
     
@@ -38,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/links/index.html</loc>
+    <loc>https://zekiyjw.github.io/404.html</loc>
     
     <lastmod>2022-06-28</lastmod>
     
@@ -47,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/404.html</loc>
+    <loc>https://zekiyjw.github.io/about/index.html</loc>
     
     <lastmod>2022-06-28</lastmod>
     
@@ -56,16 +74,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/about/index.html</loc>
-    
-    <lastmod>2022-06-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/06/28/hello-world/</loc>
+    <loc>https://zekiyjw.github.io/2022/06/28/hello-world/</loc>
     
     <lastmod>2022-06-28</lastmod>
     
@@ -75,13 +84,27 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
+    <loc>https://zekiyjw.github.io/</loc>
     <lastmod>2022-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
+  <url>
+    <loc>https://zekiyjw.github.io/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
+    <lastmod>2022-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://zekiyjw.github.io/categories/JavaScript/</loc>
+    <lastmod>2022-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>

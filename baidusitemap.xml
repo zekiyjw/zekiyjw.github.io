@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://example.com/2022/06/28/hello-world/</loc>
+    <loc>https://zekiyjw.github.io/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/</loc>
+    <lastmod>2022-06-29</lastmod>
+  </url>
+  <url>
+    <loc>https://zekiyjw.github.io/categories/index.html</loc>
+    <lastmod>2022-06-29</lastmod>
+  </url>
+  <url>
+    <loc>https://zekiyjw.github.io/2022/06/28/hello-world/</loc>
     <lastmod>2022-06-28</lastmod>
   </url>
 </urlset> 

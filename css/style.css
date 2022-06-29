@@ -6972,8 +6972,8 @@ body.okayNav-loaded {
 .donate-box .donate-payimg img {
   display: block;
   text-align: center;
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  /* height: 140px; */
 }
 
 .book .media-middle {
@@ -9212,4 +9212,9 @@ body.okayNav-loaded {
   .navbar-fixed-bottom .navbar-collapse {
     max-height: 200px;
   }
+}
+
+/* 隐藏valine版权信息 */
+.txt-right{
+  display: none;
 }

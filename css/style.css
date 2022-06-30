@@ -9218,3 +9218,10 @@ body.okayNav-loaded {
 .txt-right{
   display: none;
 }
+
+.link-format ul li span,.link-format ul li span a{
+  color:#fa836d!important;
+}
+.link-format ul li span a{
+  text-decoration: underline;
+}

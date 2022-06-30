@@ -43,6 +43,8 @@
   
   
   
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
   
 <meta name="generator" content="Hexo 6.2.0"></head>
 
@@ -251,9 +253,19 @@
   <div class="widget">
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
+      <ul class="recent-post-list list-unstyled ">
         
           <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/" class="thumb">
+    
+    
+        <span style="background-image:url(/images/avatar.jpg)" alt="一元正值符" class="thumb-image"></span>
+    
+</a>
+
+            </div>
             
             <div class="item-inner">
               <p class="item-category">
@@ -269,6 +281,16 @@
           </li>
           
           <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/06/28/hello-world/" class="thumb">
+    
+    
+        <span class="thumb-image thumb-none"></span>
+    
+</a>
+
+            </div>
             
             <div class="item-inner">
               <p class="item-category">
@@ -296,7 +318,9 @@
   <main class="main" role="main">
   <article class="article article-links article-type-list" itemscope="">
   <header class="article-header">
-    <h1 itemprop="title">友情链接</h1>
+    <h1 itemprop="title">
+      友情链接
+    </h1>
     <p class="text-muted">
       欢迎交换链接，可在当前页面留言
     </p>
@@ -309,12 +333,16 @@
             <div class="panel panel-default hover-shadow hover-grow">
               <figure class="media media-middle">
                 <div class="media-left pr-no">
-                  <a href="http://chuangzaoshi.com/" target="_blank" class="img-burn thumb-md media-middle">
-                    <img src="/images/favatar/chuangzaoshi-logo.png" class="w-full" alt="">
+                  <a href="/images/favatar/chuangzaoshi-logo.png" target="_blank" class="img-burn thumb-md media-middle">
+                    <img src="/images/favatar/chuangzaoshi-logo.png" class="w-full" alt="为创意工作者而设计">
                   </a>
                 </div>
                 <div class="media-body p-0x">
-                  <h4 class="media-heading"><a href="http://chuangzaoshi.com/" target="_blank"><span class="text-dark">创造狮</span></a></h4>
+                  <h4 class="media-heading"><a href="http://chuangzaoshi.com/" target="_blank">
+                      <span style="color:#9932CC" title="点击跳转">
+                        创造狮
+                      </span></a>
+                  </h4>
                   <div class="text-muted">
                     为创意工作者而设计
                   </div>
@@ -328,12 +356,16 @@
             <div class="panel panel-default hover-shadow hover-grow">
               <figure class="media media-middle">
                 <div class="media-left pr-no">
-                  <a href="http://idesign.qq.com/" target="_blank" class="img-burn thumb-md media-middle">
-                    <img src="/images/favatar/idesign-logo.png" class="w-full" alt="">
+                  <a href="/images/favatar/idesign-logo.png" target="_blank" class="img-burn thumb-md media-middle">
+                    <img src="/images/favatar/idesign-logo.png" class="w-full" alt="网罗全网高逼格的设计站点">
                   </a>
                 </div>
                 <div class="media-body p-0x">
-                  <h4 class="media-heading"><a href="http://idesign.qq.com/" target="_blank"><span class="text-dark">腾讯设计导航</span></a></h4>
+                  <h4 class="media-heading"><a href="http://idesign.qq.com/" target="_blank">
+                      <span style="color:#9932CC" title="点击跳转">
+                        腾讯设计导航
+                      </span></a>
+                  </h4>
                   <div class="text-muted">
                     网罗全网高逼格的设计站点
                   </div>
@@ -354,8 +386,7 @@
   </section>
 
 
-
-
+    
 </main>
 
   <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
@@ -479,8 +510,8 @@
     el: '#vcomments',
     verify: false,
     notify: false,
-    appId: '',
-    appKey: '',
+    appId: 'WxCO580q05yKq3Xrjw68PHdO-gzGzoHsz',
+    appKey: 'rnH08Eb74P3g9qDKt6Vz9rwb',
     placeholder: 'Just go go',
     avatar: 'mm',
     meta: meta,
@@ -493,6 +524,35 @@
 
                                           
                                              
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
 
                                                 
 

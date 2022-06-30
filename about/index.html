@@ -45,6 +45,8 @@
   
   
   
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
   
 <meta name="generator" content="Hexo 6.2.0"></head>
 
@@ -253,9 +255,19 @@
   <div class="widget">
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
+      <ul class="recent-post-list list-unstyled ">
         
           <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/" class="thumb">
+    
+    
+        <span style="background-image:url(/images/avatar.jpg)" alt="一元正值符" class="thumb-image"></span>
+    
+</a>
+
+            </div>
             
             <div class="item-inner">
               <p class="item-category">
@@ -271,6 +283,16 @@
           </li>
           
           <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/06/28/hello-world/" class="thumb">
+    
+    
+        <span class="thumb-image thumb-none"></span>
+    
+</a>
+
+            </div>
             
             <div class="item-inner">
               <p class="item-category">
@@ -576,6 +598,35 @@
                            
                                     
                                              
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
 
                                                 
 

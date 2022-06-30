@@ -2,8 +2,8 @@ https://zekiyjw.github.io/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%
 https://zekiyjw.github.io/categories/index.html
 https://zekiyjw.github.io/repository/index.html
 https://zekiyjw.github.io/tags/index.html
-https://zekiyjw.github.io/books/index.html
 https://zekiyjw.github.io/links/index.html
+https://zekiyjw.github.io/books/index.html
 https://zekiyjw.github.io/404.html
 https://zekiyjw.github.io/about/index.html
 https://zekiyjw.github.io/2022/06/28/hello-world/

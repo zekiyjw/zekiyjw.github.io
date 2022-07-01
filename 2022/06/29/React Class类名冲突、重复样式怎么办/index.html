@@ -19,23 +19,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>一元正值符 | 张嘉桢の博客</title>
-  <meta name="description" content="1           hello:hexo">
+  <title>React Class类名冲突、重复样式怎么办? | 张嘉桢の博客</title>
+  <meta name="description" content="本文提供给大家两种解决方案  CSS in Js 它是一种模式，主要借助第三方库生成随机类名称来建立一种局部类名的方式。  第一步安装 styled-components 库  1npm install -S styed-components  第二步 引入 styled-components，并在Js中写Css代码  123456789101112131415161718192021222324">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一元正值符">
-<meta property="og:url" content="https://zekiyjw.github.io/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/index.html">
+<meta property="og:title" content="React Class类名冲突、重复样式怎么办?">
+<meta property="og:url" content="https://zekiyjw.github.io/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/index.html">
 <meta property="og:site_name" content="张嘉桢の博客">
-<meta property="og:description" content="1           hello:hexo">
+<meta property="og:description" content="本文提供给大家两种解决方案  CSS in Js 它是一种模式，主要借助第三方库生成随机类名称来建立一种局部类名的方式。  第一步安装 styled-components 库  1npm install -S styed-components  第二步 引入 styled-components，并在Js中写Css代码  123456789101112131415161718192021222324">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zekiyjw.github.io/images/avatar.jpg">
 <meta property="article:published_time" content="2022-06-29T09:29:27.000Z">
-<meta property="article:modified_time" content="2022-06-30T03:21:34.732Z">
+<meta property="article:modified_time" content="2022-07-01T09:29:27.000Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="表达式与运算符">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zekiyjw.github.io/images/avatar.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zekiyjw.github.io/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/index.html">
+  <link rel="canonical" href="https://zekiyjw.github.io/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/index.html">
   
     <link rel="alternate" href="/atom.xml" title="张嘉桢の博客" type="application/atom+xml">
   
@@ -47,6 +44,8 @@
 
   
   
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
   
   
 <meta name="generator" content="Hexo 6.2.0"></head>
@@ -217,30 +216,16 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
 
     
       
-  <div class="widget">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="tag">表达式与运算符</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
 
     
       
-  <div class="widget">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget-body tagcloud">
-      <a href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 13px;">表达式与运算符</a>
-    </div>
-  </div>
-
     
       
   <div class="widget">
@@ -256,16 +241,26 @@
   <div class="widget">
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
+      <ul class="recent-post-list list-unstyled ">
         
           <li>
             
+            <div class="item-thumb">
+              <a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" class="thumb">
+    
+    
+        <span style="background-image:url(/images/avatar.jpg)" alt="React Class类名冲突、重复样式怎么办?" class="thumb-image"></span>
+    
+</a>
+
+            </div>
+            
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
+                <a class="category-link" href="/categories/CSS/">CSS</a>
               </p>
               <p class="item-title">
-                <a href="/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/" class="title">一元正值符</a>
+                <a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" class="title">React Class类名冲突、重复样式怎么办?</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-06-29T09:29:27.000Z" itemprop="datePublished">2022-06-29</time>
@@ -274,6 +269,16 @@
           </li>
           
           <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/06/28/hello-world/" class="thumb">
+    
+    
+        <span class="thumb-image thumb-none"></span>
+    
+</a>
+
+            </div>
             
             <div class="item-inner">
               <p class="item-category">
@@ -301,14 +306,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-一元正值符" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-React Class类名冲突、重复样式怎么办" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      一元正值符
+      React Class类名冲突、重复样式怎么办?
     </h1>
   
 
@@ -316,32 +321,37 @@
       <div class="article-meta">
         <!-- <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/" class="article-date">
+	<a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" class="article-date">
 	  <time datetime="2022-06-29T09:29:27.000Z" itemprop="datePublished">2022-06-29</time>
 	</a>
 </span> -->
 
 <span class="article-date">
     <i class="icon icon-calendar"></i>
-    <a href="/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/" class="article-date">
+    <a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" class="article-date">
 		发布于
         <time datetime="2022-06-29T09:29:27.000Z" itemprop="datePublished">
             2022-06-29
         </time>
     </a>
 </span>
+
+<span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+    <a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" class="article-date">
+        更新于
+        <time datetime="2022-07-01T09:29:27.000Z" itemprop="dateUpdated">
+            2022-07-01
+        </time>
+    </a>
+</span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
   </span>
 
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="tag">表达式与运算符</a>
-  </span>
-
 
         
 	<span class="article-read hidden-xs">
@@ -352,27 +362,52 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <figure class="highlight yaml">
-<table>
-<tbody>
-<tr>
-  <td class="gutter">
-    <pre><span class="line">1</span><br></pre>
-  </td>
-  <td class="code">
-    <pre><span class="line"><span class="attr">hello:</span><span class="string">hexo</span></span><br></pre>
-  </td>
-</tr>
-</tbody>
-</table>
-</figure>
-<p><img src="/images/avatar.jpg" class="" alt=""></img></p>
+        <p>本文提供给大家两种解决方案</p>
+<h2 id="css-in-js"><a class="markdownIt-Anchor" href="#css-in-js"></a> CSS in Js</h2>
+<p><strong>它是一种模式，主要借助第三方库生成<code>随机类名称</code>来建立一种局部类名的方式。</strong></p>
+<ul>
+<li>第一步安装 <code>styled-components</code> 库</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -S styed-components</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二步 引入 <code>styled-components</code>，并在Js中写Css代码</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import styled from <span class="string">&quot;styled-components&quot;</span>;</span><br><span class="line"></span><br><span class="line">// 声明一个公共样式</span><br><span class="line">const style_div = &#123;</span><br><span class="line">  width: 100,</span><br><span class="line">  height: 100,</span><br><span class="line">  color: <span class="string">&quot;#fff&quot;</span>,</span><br><span class="line">  textAlign: <span class="string">&quot;center&quot;</span>,</span><br><span class="line">  lineHeight: <span class="string">&quot;100px&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 声明一个带背景色的DivA</span><br><span class="line">const DivA = styled.div`</span><br><span class="line">  background-color: red;</span><br><span class="line">`;</span><br><span class="line"></span><br><span class="line">// 声明一个带背景色的DivB</span><br><span class="line">const DivB = styled.div`</span><br><span class="line">  background-color: green;</span><br><span class="line">`;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default <span class="keyword">function</span> <span class="function"><span class="title">App</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">&quot;App&quot;</span>&gt;</span><br><span class="line">      &lt;DivA style=&#123;style_div&#125;&gt;DivA&lt;/DivA&gt;</span><br><span class="line">      &lt;DivB style=&#123;style_div&#125;&gt;DivB&lt;/DivB&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>CSS in Js</code>效果图<br />
+<image src="/images/06-29/01.png" alt="" /></li>
+</ul>
+<p><strong>Tips:要避免在render方法中声明样式化组件，这样程序虽然不会报错，但是会引起性能问题，引起组件不必要的渲染！</strong></p>
+<!-- ## 总结：通过引入 `styled-components` 包，可以创建样式，也可以直接创建元素，并且类名是随机生成的，这就避免了类名重复，样式污染的问题。 -->
+<h2 id="css-module"><a class="markdownIt-Anchor" href="#css-module"></a> CSS Module</h2>
+<p><strong>在使用create-react-app脚手架创建的项目后，该项目是支持css-module的</strong></p>
+<p><strong>样式文件的名称必须以<code>xxx.module.css</code>或者<code>xxx.module.scss</code>的形式命名；例如<code>styles.module.css</code></strong></p>
+<ul>
+<li>第一步新建<code>styles.module.css</code>文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.pink_box &#123;</span><br><span class="line">  background-color: pink;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.skyblue_box&#123;</span><br><span class="line">  background-color: skyblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二步引入<code>styles.module.css</code>,className以变量引入的方式进行添加,例如:className ={styles.counter}</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import styles from <span class="string">&quot;./styles.module.css&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default <span class="keyword">function</span> <span class="function"><span class="title">App</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">&quot;App&quot;</span>&gt;</span><br><span class="line">      &lt;div className=&#123;styles.pink_box&#125;&gt;DivA&lt;/div&gt;</span><br><span class="line">      &lt;div className=&#123;styles.skyblue_box&#125;&gt;DivB&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>CSS Module</code>效果图<br />
+<image src="/images/06-29/02.png" alt="" /></li>
+</ul>
+<h2 id="css工程化"><a class="markdownIt-Anchor" href="#css工程化"></a> CSS工程化</h2>
+<p><strong>随着项目越来越大，人越来越多，命名慢慢成为问题，类名重复，样式污染。CSS社区也诞生了相应的模块化解决方案</strong></p>
+<ul>
+<li>CSS命名方法论：通过人工的方式来约定命名规则</li>
+<li>CSS Module: 一个css文件就是一个独立的模块</li>
+<li>CSS in Js: 在Js中写Css</li>
+</ul>
+<p><strong>总结：个人推荐<code>CSS Module</code>，因为功能简单，只加入了局部作用域和模块依赖，可以保证某个组件的样式，不会影响其他组件</strong></p>
 
       
     </div>
@@ -382,7 +417,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://zekiyjw.github.io/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/" title="一元正值符" target="_blank" rel="external">https://zekiyjw.github.io/2022/06/29/一元正值符/</a>
+      <a href="https://zekiyjw.github.io/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" title="React Class类名冲突、重复样式怎么办?" target="_blank" rel="external">https://zekiyjw.github.io/2022/06/29/React Class类名冲突、重复样式怎么办/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -640,6 +675,35 @@
 
                                           
                                              
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
 
                                                 
 
@@ -736,8 +800,6 @@
                 $wrap.append($('<button>').addClass('copy-btn').append('一键复制').on('click', function (e) {
                     var code = $(this).parent().find(".code")[0].innerText
                         
-                            code += "\n/**\n* 感谢您复制代码，使用代码请注明引用出处\n* zeki @ https://zekiyjw.github.io\n*/"
-                                
             var ta = document.createElement('textarea')
                     document.body.appendChild(ta)
                     ta.style.position = 'absolute'

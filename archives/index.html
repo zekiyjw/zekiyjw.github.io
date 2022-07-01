@@ -41,6 +41,8 @@
   
   
   
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
   
 <meta name="generator" content="Hexo 6.2.0"></head>
 
@@ -210,30 +212,16 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
 
     
       
-  <div class="widget">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="tag">表达式与运算符</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
 
     
       
-  <div class="widget">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget-body tagcloud">
-      <a href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 13px;">表达式与运算符</a>
-    </div>
-  </div>
-
     
       
   <div class="widget">
@@ -249,16 +237,26 @@
   <div class="widget">
     <h3 class="widget-title">最新文章</h3>
     <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
+      <ul class="recent-post-list list-unstyled ">
         
           <li>
             
+            <div class="item-thumb">
+              <a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" class="thumb">
+    
+    
+        <span style="background-image:url(/images/avatar.jpg)" alt="React Class类名冲突、重复样式怎么办?" class="thumb-image"></span>
+    
+</a>
+
+            </div>
+            
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
+                <a class="category-link" href="/categories/CSS/">CSS</a>
               </p>
               <p class="item-title">
-                <a href="/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/" class="title">一元正值符</a>
+                <a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" class="title">React Class类名冲突、重复样式怎么办?</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-06-29T09:29:27.000Z" itemprop="datePublished">2022-06-29</time>
@@ -267,6 +265,16 @@
           </li>
           
           <li>
+            
+            <div class="item-thumb">
+              <a href="/2022/06/28/hello-world/" class="thumb">
+    
+    
+        <span class="thumb-image thumb-none"></span>
+    
+</a>
+
+            </div>
             
             <div class="item-inner">
               <p class="item-category">
@@ -321,9 +329,9 @@
           <div class="collection">
     
     
-<a href="/2022/06/29/%E4%B8%80%E5%85%83%E6%AD%A3%E5%80%BC%E7%AC%A6/" class="collection-item"   itemprop="url">
+<a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" class="collection-item"   itemprop="url">
   <time datetime="2022-06-29T09:29:27.000Z" itemprop="datePublished">2022-06-29</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 一元正值符
+  <span>&nbsp;&nbsp;&nbsp;</span> React Class类名冲突、重复样式怎么办?
 </a>
 
 
@@ -456,6 +464,35 @@
                            
                                     
                                              
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
 
                                                 
 
@@ -552,8 +589,6 @@
                 $wrap.append($('<button>').addClass('copy-btn').append('一键复制').on('click', function (e) {
                     var code = $(this).parent().find(".code")[0].innerText
                         
-                            code += "\n/**\n* 感谢您复制代码，使用代码请注明引用出处\n* zeki @ https://zekiyjw.github.io\n*/"
-                                
             var ta = document.createElement('textarea')
                     document.body.appendChild(ta)
                     ta.style.position = 'absolute'

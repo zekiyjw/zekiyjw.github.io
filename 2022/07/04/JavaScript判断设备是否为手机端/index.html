@@ -19,16 +19,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>归档 | 张嘉桢の博客</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="张嘉桢の博客">
-<meta property="og:url" content="https://zekiyjw.github.io/archives/index.html">
+  <title>JavaScript如何判断移动设备 | 张嘉桢の博客</title>
+  <meta name="description" content="本文给大家提供五种解决方案  一、window.navigator  window.navigator.userAgent：汉译用户代理。它首部包含了一个特征字符，可以让网络协议的端来识别发送请求的代理软件的应用程序类型、操作部、用户软件以及版本号  1userAgent: &quot;Mozilla&#x2F;5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript如何判断移动设备">
+<meta property="og:url" content="https://zekiyjw.github.io/2022/07/04/JavaScript%E5%88%A4%E6%96%AD%E8%AE%BE%E5%A4%87%E6%98%AF%E5%90%A6%E4%B8%BA%E6%89%8B%E6%9C%BA%E7%AB%AF/index.html">
 <meta property="og:site_name" content="张嘉桢の博客">
+<meta property="og:description" content="本文给大家提供五种解决方案  一、window.navigator  window.navigator.userAgent：汉译用户代理。它首部包含了一个特征字符，可以让网络协议的端来识别发送请求的代理软件的应用程序类型、操作部、用户软件以及版本号  1userAgent: &quot;Mozilla&#x2F;5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X)">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-04T03:24:05.000Z">
+<meta property="article:modified_time" content="2022-07-04T03:24:05.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://zekiyjw.github.io/archives/index.html">
+  <link rel="canonical" href="https://zekiyjw.github.io/2022/07/04/JavaScript%E5%88%A4%E6%96%AD%E8%AE%BE%E5%A4%87%E6%98%AF%E5%90%A6%E4%B8%BA%E6%89%8B%E6%9C%BA%E7%AB%AF/index.html">
   
     <link rel="alternate" href="/atom.xml" title="张嘉桢の博客" type="application/atom+xml">
   
@@ -326,68 +330,238 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档</h1>
-	      <p class="text-muted">共 3 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
+  <div class="content">
+  <article id="post-JavaScript判断设备是否为手机端" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
   
+    <h1 class="article-title" itemprop="name">
+      JavaScript如何判断移动设备
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <!-- <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/07/04/JavaScript%E5%88%A4%E6%96%AD%E8%AE%BE%E5%A4%87%E6%98%AF%E5%90%A6%E4%B8%BA%E6%89%8B%E6%9C%BA%E7%AB%AF/" class="article-date">
+	  <time datetime="2022-07-04T03:24:05.000Z" itemprop="datePublished">2022-07-04</time>
+	</a>
+</span> -->
+
+<span class="article-date">
+    <i class="icon icon-calendar"></i>
+    <a href="/2022/07/04/JavaScript%E5%88%A4%E6%96%AD%E8%AE%BE%E5%A4%87%E6%98%AF%E5%90%A6%E4%B8%BA%E6%89%8B%E6%9C%BA%E7%AB%AF/" class="article-date">
+		发布于
+        <time datetime="2022-07-04T03:24:05.000Z" itemprop="datePublished">
+            2022-07-04
+        </time>
+    </a>
+</span>
+
+<span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+    <a href="/2022/07/04/JavaScript%E5%88%A4%E6%96%AD%E8%AE%BE%E5%A4%87%E6%98%AF%E5%90%A6%E4%B8%BA%E6%89%8B%E6%9C%BA%E7%AB%AF/" class="article-date">
+        更新于
+        <time datetime="2022-07-04T03:24:05.000Z" itemprop="dateUpdated">
+            2022-07-04
+        </time>
+    </a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </span>
+
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/04/JavaScript%E5%88%A4%E6%96%AD%E8%AE%BE%E5%A4%87%E6%98%AF%E5%90%A6%E4%B8%BA%E6%89%8B%E6%9C%BA%E7%AB%AF/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>本文给大家提供五种解决方案</p>
+<h2 id="一-windownavigator"><a class="markdownIt-Anchor" href="#一-windownavigator"></a> 一、window.navigator</h2>
+<ul>
+<li><strong><code>window.navigator.userAgent</code>：汉译用户代理。它首部包含了一个特征字符，可以让网络协议的端来识别发送请求的代理软件的应用程序类型、操作部、用户软件以及版本号</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userAgent: <span class="string">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1&quot;</span></span><br></pre></td></tr></table></figure>
+<p>我们通过<code>window.navigator.userAgent</code>属性拿到这个字符串，只要里面包含<code>Android</code>、<code>iPhone</code>、<code>iPad</code>、<code>iPod</code>、<code>Symbian</code>等关键字，就可以认定是移动设备<br />
+<small>Tips:<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A1%9E%E7%8F%AD%E7%B3%BB%E7%BB%9F/8506777?fromtitle=symbian&fromid=264891&fr=aladdin">什么是 Symbian?</a></small></p>
+<p>上代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const isMobile = () =&gt; &#123;</span><br><span class="line">  <span class="built_in">let</span> u = window.navigator.userAgent;</span><br><span class="line">  <span class="keyword">if</span> (</span><br><span class="line">    u.indexOf(<span class="string">&#x27;Android&#x27;</span>) &gt; -1 ||</span><br><span class="line">    u.indexOf(<span class="string">&#x27;iPhone&#x27;</span>) &gt; -1 ||</span><br><span class="line">    u.indexOf(<span class="string">&#x27;iPad&#x27;</span>) &gt; -1 ||</span><br><span class="line">    u.indexOf(<span class="string">&#x27;iPod&#x27;</span>) &gt; -1 ||</span><br><span class="line">    u.indexOf(<span class="string">&#x27;Symbian&#x27;</span>) &gt; -1</span><br><span class="line">  ) &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment"># But! userAgent 是可以被修改的</span></span><br></pre></td></tr></table></figure>
+<p><small>具体操作请看这篇文章<a target="_blank" rel="noopener" href="https://dysaniazzz.github.io/2019/06/06/useragent/">Chrome 浏览器如何修改 User-Agent</a></small></p>
+<ul>
+<li><strong><code>window.navigator.userAgentData</code>：将 user agent 字符串解析为一个对象，该对象的<code>mobile</code>属性，返回一个布尔值，表示用户是否使用移动设备</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 苹果的 Safari 浏览器和 Firefox 浏览器都不支持这个属性</span></span><br><span class="line">const isMobile = navigator.userAgentData.mobile;</span><br></pre></td></tr></table></figure>
+<p><small>具体情况可以查看 <a target="_blank" rel="noopener" href="https://caniuse.com/mdn-api_navigator_useragentdata">Caniuse 网站</a>。</small></p>
+<ul>
+<li><strong><code>navigator.platform</code>：它返回一个字符串，表示用户的操作系统</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (/Android|iPhone|iPad|iPod/i.test(navigator.platform)) &#123;</span><br><span class="line">  <span class="comment"># 当前设备是移动设备</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二-侦听屏幕宽度以及设备指针"><a class="markdownIt-Anchor" href="#二-侦听屏幕宽度以及设备指针"></a> 二、侦听屏幕宽度以及设备指针</h2>
+<ul>
+<li><code>window.screen</code>对象返回用户设备的屏幕信息，该对象的 width 属性是屏幕宽度（单位为像素）。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对手机横屏失效</span></span><br><span class="line"><span class="keyword">if</span> (window.screen.width &lt; 500) &#123;</span><br><span class="line">  <span class="comment"># 当前设备是移动设备</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>window.matchMedia()</code>方法接收一个 CSS 的 media query 语句作为参数，判断这个语句是否生效</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不严谨，针对手机模拟器侦听为true</span></span><br><span class="line"><span class="built_in">let</span> isMobile = window.matchMedia(<span class="string">&quot;only screen and (max-width: 760px)&quot;</span>).matches;</span><br></pre></td></tr></table></figure>
+<p><strong>如果屏幕宽度<code>window.screen.width</code>小于 500 像素，就认为是手机。如果手机横屏使用就识别不了~~</strong></p>
+<h2 id="三-侦测屏幕方向-windoworientation-iphone-的-safari-浏览器不支持该属性"><a class="markdownIt-Anchor" href="#三-侦测屏幕方向-windoworientation-iphone-的-safari-浏览器不支持该属性"></a> 三、侦测屏幕方向 window.orientation (iPhone 的 Safari 浏览器不支持该属性)</h2>
+<strong>
+手机屏幕可以随时更改方向，桌面设备做不到。
+`window.orientation`属性用于获取屏幕的当前方向，只有移动设备才有这个属性，桌面设备会返回`undefined`。
+</strong>
+<p>上代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (typeof window.orientation !== <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">  <span class="comment"># 当前设备是移动设备</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四-touch-事件-推荐"><a class="markdownIt-Anchor" href="#四-touch-事件-推荐"></a> 四、touch 事件 (推荐)</h2>
+<p><strong>手机浏览器的 DOM 元素可以通过<code>ontouchstart</code>属性，为<code>touch</code>事件指定监听函数。桌面设备没有这个属性</strong></p>
+<p>上代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">isMobile</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> (<span class="string">&quot;ontouchstart&quot;</span> <span class="keyword">in</span> document.documentElement);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">isMobile</span></span>()&#123;</span><br><span class="line">    try&#123;</span><br><span class="line">        document.createEvent(<span class="string">&quot;TouchEvent&quot;</span>); <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;catch(e)&#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="五-工具包"><a class="markdownIt-Anchor" href="#五-工具包"></a> 五、工具包</h2>
+<p><strong>直接引用别人写好的工具包，这里推荐<code>react-device-detect</code>，它支持多种粒度的设备侦测</strong></p>
+<p>上代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#123;isMobile&#125; from <span class="string">&#x27;react-device-detect&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (isMobile) &#123;</span><br><span class="line">    <span class="comment"># 当前设备是移动设备</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>本文借鉴于阮一峰老师的<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2021/09/detecting-mobile-browser.html">JavaScript 侦测手机浏览器的五种方法</a></strong></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://zekiyjw.github.io/2022/07/04/JavaScript%E5%88%A4%E6%96%AD%E8%AE%BE%E5%A4%87%E6%98%AF%E5%90%A6%E4%B8%BA%E6%89%8B%E6%9C%BA%E7%AB%AF/" title="JavaScript如何判断移动设备" target="_blank" rel="external">https://zekiyjw.github.io/2022/07/04/JavaScript判断设备是否为手机端/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/zekiyjw" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/zekiyjw" target="_blank"><span class="text-dark">张嘉桢</span><small class="ml-1x">Web Developer</small></a></h3>
+        <div>落红不是无情物，化作春泥更护花。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
     
-      
-      
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2022" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2022
-            </a>
-            <!-- <a href="/archives/2022" class="archive-year">2022</a> -->
-          </h3>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" title="React Class类名冲突、重复样式怎么办?"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>读后有收获可以请作者喝杯咖啡哟</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">感谢您的支持，我会继续努力的!</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">感谢您的支持，我会继续努力的!</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div id="collapse2022" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2022">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2022/07/04/JavaScript%E5%88%A4%E6%96%AD%E8%AE%BE%E5%A4%87%E6%98%AF%E5%90%A6%E4%B8%BA%E6%89%8B%E6%9C%BA%E7%AB%AF/" class="collection-item"   itemprop="url">
-  <time datetime="2022-07-04T03:24:05.000Z" itemprop="datePublished">2022-07-04</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> JavaScript如何判断移动设备
-</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-  
-    
-    
-    
-<a href="/2022/06/29/React%20Class%E7%B1%BB%E5%90%8D%E5%86%B2%E7%AA%81%E3%80%81%E9%87%8D%E5%A4%8D%E6%A0%B7%E5%BC%8F%E6%80%8E%E4%B9%88%E5%8A%9E/" class="collection-item"   itemprop="url">
-  <time datetime="2022-06-29T09:29:27.000Z" itemprop="datePublished">2022-06-29</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> React Class类名冲突、重复样式怎么办?
-</a>
 
-
-  
-    
-    
-    
-<a href="/2022/06/28/hello-world/" class="collection-item"   itemprop="url">
-  <time datetime="2022-06-28T04:12:20.957Z" itemprop="datePublished">2022-06-28</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Hello World
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
-  	 	
 </main>
 
   <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
@@ -497,7 +671,40 @@
          
                   
                            
+                              
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+                                 
                                     
+                                       
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'WxCO580q05yKq3Xrjw68PHdO-gzGzoHsz',
+    appKey: 'rnH08Eb74P3g9qDKt6Vz9rwb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+                                          
                                              
   <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
   <script>

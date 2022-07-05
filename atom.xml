@@ -6,7 +6,7 @@
   <link href="https://zekiyjw.github.io/atom.xml" rel="self"/>
   
   <link href="https://zekiyjw.github.io/"/>
-  <updated>2022-07-04T03:24:05.000Z</updated>
+  <updated>2022-07-05T08:49:23.000Z</updated>
   <id>https://zekiyjw.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>for循环实现每隔一秒打印下标</title>
+    <link href="https://zekiyjw.github.io/2022/07/05/for%E5%BE%AA%E7%8E%AF%E5%AE%9E%E7%8E%B0%E6%AF%8F%E9%9A%94%E4%B8%80%E7%A7%92%E6%89%93%E5%8D%B0%E4%B8%8B%E6%A0%87/"/>
+    <id>https://zekiyjw.github.io/2022/07/05/for%E5%BE%AA%E7%8E%AF%E5%AE%9E%E7%8E%B0%E6%AF%8F%E9%9A%94%E4%B8%80%E7%A7%92%E6%89%93%E5%8D%B0%E4%B8%8B%E6%A0%87/</id>
+    <published>2022-07-05T08:49:23.000Z</published>
+    <updated>2022-07-05T08:49:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var i = 0; i &lt; 6; i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;, i * 1000)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 大家猜猜最后打印得结果是什么 0,1,2,3,4,5 ?</span></span><br></pre></td></tr></table></figure><p>上图</p><image src="/images/07-05/01.png" alt="for循环实现每隔一秒打印下标 01" /><p><strong>为什么呢? 这里涉及到<code>作用域</code> <code>事件循环</code>等知识点</strong></p><h2 id="作用域"><a class="markdownIt-Anchor" href="#作用域"></a> 作用域</h2><p>引用《你不知道的 Javascript》中的一个比喻，可以把作用域链想象成一座高楼，第一层代表当前执行作用域，楼的顶层代表全局作用域。我们在查找变量时会先在当前楼层进行查找，如果没有找到，就会坐电梯前往上一层楼，如果还是没有就继续向上找。依次类推。到达顶层后（全局作用域），可能找到了你所需要的变量，也可能没找到，但无论如何查找过程都将停止。</p><h2 id="事件循环"><a class="markdownIt-Anchor" href="#事件循环"></a> 事件循环</h2><p>JavaScript 语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。</p><p>如果排队是因为计算量大，CPU 忙不过来，倒也算了，但是很多时候 CPU 是闲着的，因为 IO 设备（输入输出设备）很慢（比如 Ajax 操作从网络读取数据），不得不等着结果出来，再往下执行。</p><p>JavaScript 语言的设计者意识到，这时主线程完全可以不管 IO 设备，挂起处于等待中的任务，先运行排在后面的任务。等到 IO 设备返回了结果，再回过头，把挂起的任务继续执行下去。</p><p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入&quot;任务队列&quot;（task queue）的任务，只有&quot;任务队列&quot;通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行。</p><p>具体来说，异步执行的运行机制如下。（同步执行也是如此，因为它可以被视为没有异步任务的异步执行。）</p><ul><li><p>（1）所有同步任务都在主线程上执行，形成一个执行栈（execution context stack）。</p></li><li><p>（2）主线程之外，还存在一个&quot;任务队列&quot;（task queue）。只要异步任务有了运行结果，就在&quot;任务队列&quot;之中放置一个事件。</p></li><li><p>（3）一旦&quot;执行栈&quot;中的所有同步任务执行完毕，系统就会读取&quot;任务队列&quot;，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。</p></li><li><p>（4）主线程不断重复上面的第三步。</p></li></ul><p>只要主线程空了，就会去读取&quot;任务队列&quot;，这就是 JavaScript 的运行机制。这个过程会不断重复。</p><hr /><p><strong>在了解这两个知识点后，让我们回到题目中</strong></p><ul><li>首先是一个 for 循环，var 声明一个变量 i; var 申明的变量是全局变量 记住这一点</li><li>然后来到 for 循环内容，是一个延时器，setTimeout 实际就是一个异步任务，它会被放在任务队列，在等待主线程执行完后才会执行它</li></ul><p>有的同学就很聪明说，那我把 setTimeout 的延时设置为 0，立即执行就可以了吗? 不行!</p><p>上代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var i = 0; i &lt; 6; i++)&#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">    setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;, 0)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><image src="/images/07-05/02.png" alt="for循环实现每隔一秒打印下标 02" /><strong>看到了吗？是先执行的for循环，然后再执行的setTimeout。因为setTimeout实际上是在任务队列的尾部添加了一个事件。因此要等到同步任务和任务队列现有的事件都执行完，才会得到执行。并且i是由var全局声明的，等到延时器执行时，它已经是6了。</strong><h2 id="知道是什么问题造成的那就好解决了"><a class="markdownIt-Anchor" href="#知道是什么问题造成的那就好解决了"></a> 知道是什么问题造成的，那就好解决了</h2><p><strong>一、改 <code>var</code> 为 <code>let</code></strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="built_in">let</span> i = 0; i &lt; 6; i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;, i * 1000)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=</summary>
+      
+    
+    
+    
+    <category term="面试" scheme="https://zekiyjw.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="编程题" scheme="https://zekiyjw.github.io/tags/%E7%BC%96%E7%A8%8B%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript如何判断移动设备</title>
@@ -38,6 +62,8 @@
     
     <category term="JavaScript" scheme="https://zekiyjw.github.io/categories/JavaScript/"/>
     
+    
+    <category term="自定义工具函数" scheme="https://zekiyjw.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   

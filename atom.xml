@@ -6,7 +6,7 @@
   <link href="https://zekiyjw.github.io/atom.xml" rel="self"/>
   
   <link href="https://zekiyjw.github.io/"/>
-  <updated>2022-07-13T02:45:34.000Z</updated>
+  <updated>2022-08-01T02:52:34.000Z</updated>
   <id>https://zekiyjw.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Code Review 实践</title>
+    <link href="https://zekiyjw.github.io/2022/08/01/Code-Review/"/>
+    <id>https://zekiyjw.github.io/2022/08/01/Code-Review/</id>
+    <published>2022-08-01T02:52:34.000Z</published>
+    <updated>2022-08-01T02:52:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="locationreplace-和-locationhref-的使用区别"><a class="markdownIt-Anchor" href="#locationreplace-和-locationhref-的使用区别"></a> <code>location.replace</code> 和 <code>location.href</code> 的使用区别</h1><ul><li><code>Location.replace()</code> 方法以给定的 URL 来替换当前的资源。 与 <code>assign()</code> 方法 不同的是，调用 <code>replace()</code> 方法后，当前页面不会保存到会话历史中（session <code>History</code>），这样，用户点击回退按钮时，将不会再跳转到该页面。</li><li><code>Location.href()</code> 是一个字符串化转换器 (stringifier), 返回一个包含了完整 URL 的 <code>USVString</code> 值，且允许 href 的更新。</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A B C 三个页面</span></span><br><span class="line"><span class="comment"># A 跳转 B</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># B =&gt; C  location.replace(&quot;/C&quot;)  直接将C页替换当前B页，B页不会保存到会话历史中，回退的时候是显示A页</span></span><br><span class="line"><span class="comment"># B =&gt; C  location.href(&quot;/C&quot;)     回退还是B页</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p><strong>注：使用 replace 会导致无法后退回当前页</strong></p><br /><h1 id="正则判断没有对用户可能输入的特殊符号进行转义"><a class="markdownIt-Anchor" href="#正则判断没有对用户可能输入的特殊符号进行转义"></a> 正则判断没有对用户可能输入的特殊符号进行转义</h1><p><strong>正则表达式中有些字符具有特殊的含义，如果在匹配中要用到它本来的含义，需要进行转义（在其前面加一个\）。如：* . ? + $ ^ [ ] ( ) { } | \ /</strong></p><br /><h1 id="table-行点击事件的处理"><a class="markdownIt-Anchor" href="#table-行点击事件的处理"></a> Table 行点击事件的处理</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例代码想实现点击表格行跳转页面效果，但是会导致一些鼠标操作被覆盖</span></span><br><span class="line"></span><br><span class="line">&lt;Table</span><br><span class="line">rowKey=<span class="string">&quot;id&quot;</span></span><br><span class="line">columns=&#123;columns&#125;</span><br><span class="line">dataSource=&#123;data&#125;</span><br><span class="line">onChange=&#123;handleTableChange&#125;</span><br><span class="line">onRow=&#123;(record)=&gt;&#123;</span><br><span class="line"><span class="built_in">return</span> &#123;</span><br><span class="line">onClick:()=&gt;&#123;</span><br><span class="line">History.push(`/path/<span class="variable">$&#123;record.id&#125;</span>`)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;&#125;</span><br><span class="line"> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接监听onClick事件，会导致文本复制，点击图片等操作，也会触发跳转。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 复制文本与点击跳转冲突</span></span><br><span class="line"><span class="comment"># 解决方案： 执行点击逻辑之前，判断是否选中内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 点击图片与点击跳转冲突</span></span><br><span class="line"><span class="comment"># 解决方案： 判断 e.target == rowEIObj 即可</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 将row单独作为一个组件来处理，或者在row的最外层包裹一个组件</span></span><br></pre></td></tr></table></figure><br /><h1 id="在一个较大的组件内需要注意输入组件导致的重渲染问题"><a class="markdownIt-Anchor" href="#在一个较大的组件内需要注意输入组件导致的重渲染问题"></a> 在一个较大的组件内，需要注意输入组件导致的重渲染问题</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;form&gt;</span><br><span class="line">&lt;Input onChange=&#123;e=&gt;setInputValue(e.target.value)&#125; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">&lt;Table /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 像input这种组件可以抽出来作为一个单独的组件，避免每次触发onChange都会导致整个组件重新渲染</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 组件的onChange不要去render整个组件，可以理解为非受控组件， 状态自己控制自己， 每次改变状态传给table，或者提交的时候统一收集。不然的话 行太多，会引发性能问题</span></span><br></pre></td></tr></table></figure><br /><h1 id="维护好项目内的公共组件"><a class="markdownIt-Anchor" href="#维护好项目内的公共组件"></a> 维护好项目内的公共组件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># components/Header.tsx</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 公共组件需要在注释或readme.md上说明改组件的作用和api</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;locationreplace-和-locationhref-的使用区别&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#locationreplace-和-locationhref-的使用区别&quot;&gt;&lt;/a&gt; &lt;code&gt;location.</summary>
+      
+    
+    
+    
+    <category term="Code Review" scheme="https://zekiyjw.github.io/categories/Code-Review/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>JavaScript事件委托</title>
